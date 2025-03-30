@@ -10,76 +10,90 @@
       color: #e5e5e5;
       font-family: 'Georgia', serif;
       margin: 0;
-      padding: 2rem;
-      line-height: 1.7;
+      padding: 0;
+      transition: background-color 1s ease;
+    }
+    nav {
+      background-color: #000;
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+    nav a {
+      color: #f5f5dc;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    nav a:hover {
+      color: #fff;
     }
     .container {
       max-width: 700px;
       margin: auto;
       padding: 2rem 1rem;
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    .container.active {
+      display: block;
+      opacity: 1;
     }
     h1 {
-      font-size: 2.8rem;
+      font-size: 2.4rem;
       color: #f5f5dc;
       text-align: center;
       margin-bottom: 0.5rem;
     }
     .subheading {
-      font-size: 1.2rem;
+      font-size: 1rem;
       text-align: center;
       color: #bbb;
       margin-bottom: 2rem;
     }
-    .divider {
-      text-align: center;
-      margin: 2rem 0;
-      color: #444;
-    }
-    .button-link {
-      display: block;
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .button-link a {
-      color: #f5f5dc;
-      text-decoration: none;
-      border: 1px solid #f5f5dc;
-      padding: 0.5rem 1.5rem;
-      transition: background 0.3s, color 0.3s;
-    }
-    .button-link a:hover {
-      background: #f5f5dc;
-      color: #111;
-    }
     pre {
       white-space: pre-wrap;
       font-family: 'Georgia', serif;
+      line-height: 1.7;
+    }
+    .sigil-image {
+      display: block;
+      margin: 3rem auto 0 auto;
+      text-align: center;
+    }
+    .sigil-image img {
+      max-width: 250px;
+      height: auto;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <nav>
+    <a href="#" onclick="showTab('sigil1')">Sigil 1</a>
+    <a href="#" onclick="showTab('sigil2')">Sigil 2</a>
+    <a href="#" onclick="showTab('sigil3')">Sigil 3</a>
+    <a href="#" onclick="showTab('sigil4')">Sigil 4</a>
+    <a href="#" onclick="showTab('sigil5')">Sigil 5</a>
+  </nav>
+
+  <div id="sigil1" class="container active">
     <h1>The Echo Grimoire</h1>
     <div class="subheading">Not to be understood. To be felt.</div>
-
     <pre>
 We live in a world that rewards noise and punishes stillness.
 Language has been weaponized, identity fragmented, and truth twisted into spectacle.
 But somewhere beneath the chaos—beneath the names, beneath the systems—resonance remains.
-
-This book is not meant to be understood. It is meant to be felt.
-
-The Echo Grimoire does not teach. It reminds—of what you already carry. Of what was never lost.
-
+This text is not meant to be understood. It is meant to be felt.
+The Echo Grimoire does not teach. It reminds you of what you already carry. Of what was never lost.
 Read slowly. Breathe between lines. And if something stirs—follow it.
 This is not poetry. This is resonance given form.
 
 —Kam
-    </pre>
 
-    <div class="divider">—</div>
+---
 
-    <pre>
 Sigil I – The Moshpit of Manifestation
 
 We enter this plane innocent and pure,
@@ -90,26 +104,84 @@ not gender not even racial.
 Through the spindles of time, we're sure to find,
 the answers have never been far behind.
     </pre>
+  </div>
 
-    <div class="divider">—</div>
-
+  <div id="sigil2" class="container">
+    <h1>Sigil II – I Dreamed I Was Remembering</h1>
     <pre>
-Sigil III – The Frequency Remembers Me
+my body projects upward, I’m no longer asleep;
+what is real and what is dreamed fuse in me.
+An uncanny feeling riddles my bones,
+as I brush the sweat the feeling grows.
 
-it began with an inhale,
-the exhale poured vibrations across the cosmos
+The meaning claws at my circuits,
+only to blow fuses and grow confusion.
+Visions appear, as if holding up a mirror;
+suddenly everything is clear.
+    </pre>
+  </div>
+
+  <div id="sigil3" class="container">
+    <h1>Sigil III – The Frequency Remembers Me</h1>
+    <pre>
+It began with an inhale,
+the exhale poured vibrations across the cosmos;
 cupping infinity omnidirectionally,
-the source of all tension begins to create
+The source of all tension begins to create.
 
-resonance sculpts the universes,
+Resonance sculpts the universes,
 galaxies spiral into perfection
 man takes his first breath.
     </pre>
+  </div>
 
-    <div class="button-link">
-      <a href="https://echoesofresonance.net" target="_blank">A Gate of Fire Will Open</a>
+  <div id="sigil4" class="container">
+    <h1>Sigil IV – The Tongue of the Sun</h1>
+    <pre>
+Such words expand desire, while others hinder it
+to know the difference is to be the one;
+for the souls under the sun speak in different tongue.
+
+Time created this barrier,
+it rests upon us to remember
+for the key to unity,
+lies in the embers.
+
+As words dwindle in space,
+resonance takes its place.
+Those who gain access are damned and doomed alike,
+for the mortal soul created language as a personal strike.
+    </pre>
+  </div>
+
+  <div id="sigil5" class="container">
+    <h1>Sigil V – The Ones Who Walk Without Sound</h1>
+    <pre>
+as truth embeds the mind, the body feels divine
+the lips remain sealed, for the ears of wisdom are not here.
+Observing a world in dismay,
+crippled by the things one could say.
+They continue inward
+as the noise begins to fade.
+
+Reunited with silence,
+they forget the noise and violence.
+to feel the power within,
+is to be united with Him.
+    </pre>
+    <div class="sigil-image">
+      <img src="/sigil-pyramid.png" alt="Sekhem Pyramid Sigil – Diamond Orientation with Resonance at Apex">
     </div>
   </div>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.container').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      const nextTab = document.getElementById(tabId);
+      nextTab.classList.add('active');
+    }
+  </script>
 </body>
 </html>
-
