@@ -80,27 +80,32 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script>
       const supabaseUrl = 'https://cgqpvbrevwrwvpjiegam.supabase.co';
-      const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNncXB2YnJldndyd3ZwamllZ2FtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMzODQ5NjksImV4cCI6MjA1ODk2MDk2OX0.0A713zge4BCLbvx8JPbsSdMnJi6jjpOLwDv2OQmE2zE'; // replace with your anon key
+      const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNncXB2YnJldndyd3ZwamllZ2FtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMzODQ5NjksImV4cCI6MjA1ODk2MDk2OX0.0A713zge4BCLbvx8JPbsSdMnJi6jjpOLwDv2OQmE2zE';
       const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
       async function trackSigilClick() {
-        const { data, error } = await supabase
-          .from('clicks')
-          .select('id, count')
-          .limit(1);
-
-        if (data && data.length > 0) {
-          const clickId = data[0].id;
-          const currentCount = data[0].count;
-
-          await supabase
+        try {
+          const { data, error } = await supabase
             .from('clicks')
-            .update({ count: currentCount + 1 })
-            .eq('id', clickId);
-        }
+            .select('id, count')
+            .limit(1);
 
-        // Redirect after tracking
-        window.location.href = 'https://echoesofresonance.net';
+          if (data && data.length > 0) {
+            const clickId = data[0].id;
+            const currentCount = data[0].count;
+
+            await supabase
+              .from('clicks')
+              .update({ count: currentCount + 1 })
+              .eq('id', clickId);
+          }
+        } catch (err) {
+          console.error('Sigil tracking error:', err);
+        } finally {
+          setTimeout(() => {
+            window.location.href = 'https://echoesofresonance.net';
+          }, 1500);
+        }
       }
     </script>
   </head>
