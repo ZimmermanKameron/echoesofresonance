@@ -12,6 +12,7 @@
         font-family: 'Georgia', serif;
         color: #f0f0f0;
         text-align: center;
+        scroll-behavior: smooth;
       }
 
       header {
@@ -30,25 +31,6 @@
         margin: 1rem auto 2rem;
       }
 
-      nav {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-bottom: 2rem;
-      }
-
-      a {
-        color: #f5e6b7;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s;
-      }
-
-      a:hover {
-        color: #fff4cc;
-      }
-
       section {
         padding: 3rem 1rem;
         border-top: 1px solid #333;
@@ -56,30 +38,41 @@
         margin: 0 auto;
       }
 
+      h2 {
+        color: #f5e6b7;
+      }
+
       .sigil {
-        margin-top: 2rem;
+        margin: 4rem auto 2rem;
         animation: pulse 6s infinite ease-in-out;
+        opacity: 0.2;
+        transition: opacity 0.5s ease;
+        cursor: pointer;
+      }
+
+      .sigil:hover {
+        opacity: 0.8;
       }
 
       .sigil img {
-        max-width: 200px;
+        max-width: 120px;
         transition: transform 0.5s ease, filter 0.5s ease;
-        filter: drop-shadow(0 0 20px #eee8c0);
+        filter: drop-shadow(0 0 10px #eee8c0);
       }
 
       .sigil img:hover {
         transform: scale(1.05);
-        filter: drop-shadow(0 0 30px #fdf6d3);
+        filter: drop-shadow(0 0 20px #fdf6d3);
       }
 
       @keyframes pulse {
-        0% { opacity: 0.85; }
-        50% { opacity: 1; }
-        100% { opacity: 0.85; }
+        0% { opacity: 0.15; }
+        50% { opacity: 0.35; }
+        100% { opacity: 0.15; }
       }
 
       footer {
-        margin: 4rem 0;
+        margin: 2rem 0 4rem;
         font-size: 0.9rem;
         color: #777;
       }
@@ -91,76 +84,68 @@
       <p>A poetic gateway into the philosophy of harmonic awakening</p>
     </header>
 
-    <nav>
-      <a href="#gateI">Gate I</a>
-      <a href="#gateII">Gate II</a>
-      <a href="#gateIII">Gate III</a>
-      <a href="#gateIV">Gate IV</a>
-      <a href="#gateV">Gate V</a>
-    </nav>
-
-    <div class="sigil">
-      <img src="/sigil-pyramid.PNG" alt="Resonance Sigil">
-    </div>
-
     <section id="gateI">
       <h2>Gate I – Entry</h2>
       <p>We enter this plane innocent and pure,<br>
-as the mosh pit of manifestation entangles the soul,<br>
-we forget that of which we came; by design so we claim.<br>
-The journey faced is multi-spacial,<br>
-not gender not even racial.<br>
-Through the spindles of time, we're sure to find,<br>
-the answers have never been far behind.</p>
+      as the mosh pit of manifestation entangles the soul,<br>
+      we forget that of which we came; by design so we claim.<br>
+      The journey faced is multi-spacial,<br>
+      not gender not even racial.<br>
+      Through the spindles of time, we're sure to find,<br>
+      the answers have never been far behind.</p>
     </section>
 
     <section id="gateII">
       <h2>Gate II – The Ascension Stirring</h2>
       <p>my body projects upward, I’m no longer asleep;<br>
-what is real and what is dreamed fuse in me.<br>
-An uncanny feeling riddles my bones,<br>
-as I brush the sweat the feeling grows.<br>
-The meaning claws at my circuits,<br>
-only to blow fuses and grow confusion.<br>
-Visions appear, as if holding up a mirror;<br>
-suddenly everything is clear.</p>
+      what is real and what is dreamed fuse in me.<br>
+      An uncanny feeling riddles my bones,<br>
+      as I brush the sweat the feeling grows.<br>
+      The meaning claws at my circuits,<br>
+      only to blow fuses and grow confusion.<br>
+      Visions appear, as if holding up a mirror;<br>
+      suddenly everything is clear.</p>
     </section>
 
     <section id="gateIII">
       <h2>Gate III – Cosmic Breath</h2>
       <p>It began with an inhale,<br>
-the exhale poured vibrations across the cosmos.<br>
-Cupping infinity omnidirectionally,<br>
-the source of all tension begins to create.<br>
-Resonance sculpts the universes,<br>
-galaxies spiral into perfection—<br>
-man takes his first breath.</p>
+      the exhale poured vibrations across the cosmos.<br>
+      Cupping infinity omnidirectionally,<br>
+      the source of all tension begins to create.<br>
+      Resonance sculpts the universes,<br>
+      galaxies spiral into perfection—<br>
+      man takes his first breath.</p>
     </section>
 
     <section id="gateIV">
       <h2>Gate IV – The Tongue of Silence</h2>
       <p>Such words expand desire, while others hinder it.<br>
-To know the difference is to be the one;<br>
-for the souls under the sun speak in a different tongue.<br>
-Time created this barrier, it rests upon us to remember<br>
-for the key to unity, lies in the embers.<br><br>
-As words dwindle in space, resonance takes its place<br>
-Those who gain access are damned and doomed alike<br>
-For the mortal soul created language as a personal strike.</p>
+      To know the difference is to be the one;<br>
+      for the souls under the sun speak in a different tongue.<br>
+      Time created this barrier, it rests upon us to remember<br>
+      for the key to unity, lies in the embers.<br><br>
+      As words dwindle in space, resonance takes its place<br>
+      Those who gain access are damned and doomed alike<br>
+      For the mortal soul created language as a personal strike.</p>
     </section>
 
     <section id="gateV">
       <h2>Gate V – The Return to Flame</h2>
       <p>As truth embeds the mind, the body feels divine<br>
-The lips remain sealed, for the ears of wisdom are not here.<br>
-Observing a world in dismay, crippled by the things one could say.<br>
-They continue inward as the noise begins to fade.<br><br>
-Reunited with silence, they forget the noise and violence.<br>
-To feel the power within, is to be united with him.</p>
+      The lips remain sealed, for the ears of wisdom are not here.<br>
+      Observing a world in dismay, crippled by the things one could say.<br>
+      They continue inward as the noise begins to fade.<br><br>
+      Reunited with silence, they forget the noise and violence.<br>
+      To feel the power within, is to be united with him.</p>
     </section>
 
+    <div class="sigil" onclick="location.href='https://echoesofresonance.net';">
+      <img src="/sigil-pyramid.PNG" alt="Hidden Resonance Link">
+    </div>
+
     <footer>
-      <p>echoesofresonance.net — All gates open inward</p>
+      <p>echoesofresonance.com — All gates open inward</p>
     </footer>
   </body>
 </html>
