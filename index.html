@@ -180,3 +180,38 @@
     </footer>
   </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script>
+  const supabaseUrl = 'https://cgqpvbrevwrwvpjiegam.supabase.co';
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNncXB2YnJldndyd3ZwamllZ2FtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMzODQ5NjksImV4cCI6MjA1ODk2MDk2OX0.0A713zge4BCLbvx8JPbsSdMnJi6jjpOLwDv2OQmE2zE';
+  const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+  async function trackSigilClick() {
+    try {
+      const { data, error } = await supabase
+        .from('clicks')
+        .select('id, count')
+        .limit(1)
+        .single();
+
+      if (data && data.id && !error) {
+        await supabase
+          .from('clicks')
+          .update({ count: data.count + 1 })
+          .eq('id', data.id);
+      }
+    } catch (err) {
+      console.error('Sigil click tracking failed:', err);
+    } finally {
+      // Redirect no matter what after 1.5 sec
+      setTimeout(() => {
+        window.location.href = 'https://echoesofresonance.net';
+      }, 1500);
+    }
+  }
+</script>
+
+<!-- Use this in your sigil section -->
+<div class="sigil" onclick="trackSigilClick()">
+  <img src="sigil-pyramid.PNG" alt="Sigil of Resonance" />
+</div>
