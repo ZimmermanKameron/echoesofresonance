@@ -77,6 +77,32 @@
         color: #777;
       }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script>
+      const supabaseUrl = 'https://cgqpvbrevwrwvpjiegam.supabase.co';
+      const supabaseKey = 'YOUR_PUBLIC_ANON_KEY_HERE'; // replace with your anon key
+      const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+      async function trackSigilClick() {
+        const { data, error } = await supabase
+          .from('clicks')
+          .select('id, count')
+          .limit(1);
+
+        if (data && data.length > 0) {
+          const clickId = data[0].id;
+          const currentCount = data[0].count;
+
+          await supabase
+            .from('clicks')
+            .update({ count: currentCount + 1 })
+            .eq('id', clickId);
+        }
+
+        // Redirect after tracking
+        window.location.href = 'https://echoesofresonance.net';
+      }
+    </script>
   </head>
   <body>
     <header>
@@ -140,8 +166,8 @@
       To feel the power within, is to be united with him.</p>
     </section>
 
-    <div class="sigil" onclick="location.href='https://echoesofresonance.net';">
-      <img src="/sigil-pyramid.PNG" alt="Hidden Resonance Link">
+    <div class="sigil" onclick="trackSigilClick()">
+      <img src="sigil-pyramid.PNG" alt="Sigil of Resonance" />
     </div>
 
     <footer>
