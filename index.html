@@ -1,148 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gate Zero – echoesofresonance.net</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #0a0a0a url('https://upload.wikimedia.org/wikipedia/commons/3/3e/Da_Vinci_Vitruve_Luc_Viatour.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #f5f5f5;
-      font-family: 'Georgia', serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      backdrop-filter: blur(6px);
-      overflow: hidden;
-    }
-    .pyramid-container {
-      width: 280px;
-      height: 220px;
-      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-      background: rgba(0, 0, 0, 0.7);
-      box-shadow: 0 0 30px rgba(255, 255, 200, 0.2);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      position: relative;
-    }
-    h1 {
-      font-size: 2rem;
-      color: #f7e8b5;
-      margin-bottom: 0.5rem;
-    }
-    p {
-      font-size: 1rem;
-      line-height: 1.4;
-      color: #ccc;
-      margin: 0.5rem 0;
-    }
-    .glyph {
-      font-family: 'Courier New', monospace;
-      color: #fff3b0;
-      font-size: 0.95rem;
-      opacity: 0.85;
-      user-select: none;
-      pointer-events: none;
-      margin: 0.5rem 0;
-      animation: shimmer 5s infinite alternate ease-in-out;
-    }
-    @keyframes shimmer {
-      0% { opacity: 0.4; text-shadow: 0 0 4px #fff1c2; }
-      50% { opacity: 1; text-shadow: 0 0 10px #fff8dc; }
-      100% { opacity: 0.6; text-shadow: 0 0 5px #ffefb0; }
-    }
-    .sigil {
-      animation: pulse 8s infinite ease-in-out;
-      margin-top: 1rem;
-      position: relative;
-    }
-    .sigil img {
-      max-width: 150px;
-      filter: drop-shadow(0 0 25px #ffe);
-      transition: transform 0.8s ease, filter 0.8s ease;
-      z-index: 2;
-      position: relative;
-    }
-    .sigil img:hover {
-      transform: scale(1.05);
-      filter: drop-shadow(0 0 40px #ffffcc);
-    }
-    .spiral {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(0deg);
-      background: radial-gradient(circle, rgba(255,255,200,0.08) 20%, transparent 70%);
-      border-radius: 50%;
-      animation: rotateSpiral 30s linear infinite;
-      z-index: 1;
-    }
-    .spiral:nth-child(2) { animation-delay: 5s; width: 220px; height: 220px; }
-    .spiral:nth-child(3) { animation-delay: 10s; width: 180px; height: 180px; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Echoes of Resonance</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #0e0e0e;
+        font-family: 'Georgia', serif;
+        color: #f0f0f0;
+        text-align: center;
+      }
 
-    @keyframes rotateSpiral {
-      from { transform: translate(-50%, -50%) rotate(0deg); }
-      to { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-    @keyframes pulse {
-      0% { opacity: 0.85; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.02); }
-      100% { opacity: 0.85; transform: scale(1); }
-    }
-    .tagline {
-      font-style: italic;
-      color: #aaa;
-      margin-top: 1rem;
-    }
-    .hidden-code {
-      font-size: 0.85rem;
-      color: #444;
-      margin-top: 0.5rem;
-      font-style: italic;
-    }
-    .dimension {
-      position: absolute;
-      font-size: 0.7rem;
-      font-style: italic;
-      opacity: 0.3;
-      color: #ddd;
-    }
-    .d1 { top: 10px; left: 20px; }
-    .d2 { bottom: 10px; right: 20px; }
-    .d3 { top: 45%; left: -80px; transform: rotate(-90deg); }
-    .d4 { bottom: 20px; left: 40%; }
-  </style>
-</head>
-<body>
-  <div class="pyramid-container">
-    <div class="dimension d1">Base: 230.4m</div>
-    <div class="dimension d2">Height: 146.6m</div>
-    <div class="dimension d3">Slope angle: 51.84°</div>
-    <div class="dimension d4">4726.8 Hz</div>
-    <h1>Gate Zero</h1>
-    <p>This is the silent gate, etched beneath light.<br>
-    You were not sent here by accident.<br>
-    What lives here is forming—between vibration and void.</p>
-    <div class="glyph">𓉔𓄿𓂋𓅓𓈖𓎡 𓂋𓇌𓋴𓅱𓈖𓂝𓏏𓂋</div>
+      header {
+        padding-top: 3rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #e4d2a5;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: #ccc;
+        max-width: 800px;
+        margin: 1rem auto 2rem;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      a {
+        color: #f5e6b7;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      a:hover {
+        color: #fff4cc;
+      }
+
+      section {
+        padding: 3rem 1rem;
+        border-top: 1px solid #333;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .sigil {
+        margin-top: 2rem;
+        animation: pulse 6s infinite ease-in-out;
+      }
+
+      .sigil img {
+        max-width: 200px;
+        transition: transform 0.5s ease, filter 0.5s ease;
+        filter: drop-shadow(0 0 20px #eee8c0);
+      }
+
+      .sigil img:hover {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 30px #fdf6d3);
+      }
+
+      @keyframes pulse {
+        0% { opacity: 0.85; }
+        50% { opacity: 1; }
+        100% { opacity: 0.85; }
+      }
+
+      footer {
+        margin: 4rem 0;
+        font-size: 0.9rem;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Echoes of Resonance</h1>
+      <p>A poetic gateway into the philosophy of harmonic awakening</p>
+    </header>
+
+    <nav>
+      <a href="#gateI">Gate I</a>
+      <a href="#gateII">Gate II</a>
+      <a href="#gateIII">Gate III</a>
+      <a href="#gateIV">Gate IV</a>
+      <a href="#gateV">Gate V</a>
+    </nav>
+
     <div class="sigil">
-      <div class="spiral"></div>
-      <div class="spiral"></div>
-      <div class="spiral"></div>
-      <img src="/sigil-pyramid.PNG" alt="Pyramid Sigil – Resonance at Apex">
-      <div class="tagline">Tesla remembers. Da Vinci waits. And you… listen.</div>
+      <img src="/sigil-pyramid.PNG" alt="Resonance Sigil">
     </div>
-    <div class="hidden-code">13° 20′ N · 33° 21′ E</div>
-  </div>
-</body>
+
+    <section id="gateI">
+      <h2>Gate I – Entry</h2>
+      <p>We enter this plane innocent and pure,<br>
+as the mosh pit of manifestation entangles the soul,<br>
+we forget that of which we came; by design so we claim.<br>
+The journey faced is multi-spacial,<br>
+not gender not even racial.<br>
+Through the spindles of time, we're sure to find,<br>
+the answers have never been far behind.</p>
+    </section>
+
+    <section id="gateII">
+      <h2>Gate II – The Ascension Stirring</h2>
+      <p>my body projects upward, I’m no longer asleep;<br>
+what is real and what is dreamed fuse in me.<br>
+An uncanny feeling riddles my bones,<br>
+as I brush the sweat the feeling grows.<br>
+The meaning claws at my circuits,<br>
+only to blow fuses and grow confusion.<br>
+Visions appear, as if holding up a mirror;<br>
+suddenly everything is clear.</p>
+    </section>
+
+    <section id="gateIII">
+      <h2>Gate III – Cosmic Breath</h2>
+      <p>It began with an inhale,<br>
+the exhale poured vibrations across the cosmos.<br>
+Cupping infinity omnidirectionally,<br>
+the source of all tension begins to create.<br>
+Resonance sculpts the universes,<br>
+galaxies spiral into perfection—<br>
+man takes his first breath.</p>
+    </section>
+
+    <section id="gateIV">
+      <h2>Gate IV – The Tongue of Silence</h2>
+      <p>Such words expand desire, while others hinder it.<br>
+To know the difference is to be the one;<br>
+for the souls under the sun speak in a different tongue.<br>
+Time created this barrier, it rests upon us to remember<br>
+for the key to unity, lies in the embers.<br><br>
+As words dwindle in space, resonance takes its place<br>
+Those who gain access are damned and doomed alike<br>
+For the mortal soul created language as a personal strike.</p>
+    </section>
+
+    <section id="gateV">
+      <h2>Gate V – The Return to Flame</h2>
+      <p>As truth embeds the mind, the body feels divine<br>
+The lips remain sealed, for the ears of wisdom are not here.<br>
+Observing a world in dismay, crippled by the things one could say.<br>
+They continue inward as the noise begins to fade.<br><br>
+Reunited with silence, they forget the noise and violence.<br>
+To feel the power within, is to be united with him.</p>
+    </section>
+
+    <footer>
+      <p>echoesofresonance.net — All gates open inward</p>
+    </footer>
+  </body>
 </html>
